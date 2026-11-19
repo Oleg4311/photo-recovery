@@ -1,0 +1,45 @@
+{
+  "signature": {
+    "exact": 1,
+    "expected": 6,
+    "matched": [
+      "01-contiguous"
+    ],
+    "outside_reference": [
+      "decoded",
+      "decoded",
+      "decoded",
+      "partial_jpeg"
+    ],
+    "assembly_attempts": 0,
+    "assembly_capped": 0,
+    "elapsed_seconds": 0.013
+  },
+  "deep": {
+    "exact": 6,
+    "expected": 6,
+    "matched": [
+      "01-contiguous",
+      "02-random-gap",
+      "03-text-gap",
+      "04-false-marker",
+      "05-restart-markers",
+      "06-zero-gap"
+    ],
+    "outside_reference": [
+      "ambiguous_jpeg",
+      "ambiguous_jpeg",
+      "ambiguous_jpeg",
+      "ambiguous_jpeg",
+      "ambiguous_jpeg",
+      "ambiguous_jpeg",
+      "partial_jpeg",
+      "partial_jpeg",
+      "partial_jpeg",
+      "partial_jpeg"
+    ],
+    "assembly_attempts": 4037,
+    "assembly_capped": 1,
+    "elapsed_seconds": 23.007
+  }
+}

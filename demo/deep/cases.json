@@ -1,0 +1,58 @@
+[
+  {
+    "name": "01-contiguous",
+    "offset": 0,
+    "bytes": 8902,
+    "cluster": 512,
+    "fragments": 1,
+    "expected_exact": true
+  },
+  {
+    "name": "02-random-gap",
+    "offset": 74752,
+    "bytes": 9120,
+    "cluster": 512,
+    "fragments": 2,
+    "expected_exact": true
+  },
+  {
+    "name": "03-text-gap",
+    "offset": 152576,
+    "bytes": 10500,
+    "cluster": 512,
+    "fragments": 2,
+    "expected_exact": true
+  },
+  {
+    "name": "04-false-marker",
+    "offset": 230912,
+    "bytes": 12397,
+    "cluster": 512,
+    "fragments": 2,
+    "expected_exact": true
+  },
+  {
+    "name": "05-restart-markers",
+    "offset": 310272,
+    "bytes": 9268,
+    "cluster": 512,
+    "fragments": 2,
+    "expected_exact": true
+  },
+  {
+    "name": "06-zero-gap",
+    "offset": 386560,
+    "bytes": 13754,
+    "cluster": 512,
+    "fragments": 2,
+    "expected_exact": true
+  },
+  {
+    "name": "07-overwritten-tail",
+    "offset": 469504,
+    "bytes": 13867,
+    "cluster": 512,
+    "fragments": 1,
+    "expected_exact": false
+  }
+]
