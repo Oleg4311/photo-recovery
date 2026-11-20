@@ -9,9 +9,13 @@ from test_recovery import photo
 from jpeg_validation import read_header, scan_body, valid_entropy
 
 
+REFERENCE = Path(__file__).resolve().parents[1] / "benchmark/baseline-0.3/src/jpeg_validation.py"
+
+
+@unittest.skipUnless(REFERENCE.exists(), "нет эталонной копии 0.3 (каталог benchmark/ не входит в репозиторий)")
 class EntropyEquivalence(unittest.TestCase):
     def test_mutated_truncated_and_valid_streams(self):
-        path = Path(__file__).resolve().parents[1] / "benchmark/baseline-0.3/src/jpeg_validation.py"
+        path = REFERENCE
         spec = importlib.util.spec_from_file_location("reference_jpeg", path)
         reference = importlib.util.module_from_spec(spec)
         sys.modules[spec.name] = reference
