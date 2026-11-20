@@ -167,3 +167,15 @@ PNG собирается из двух частей по CRC блоков IDAT �
 4. Источники лабораторий. Импорт полученных легальным штатным способом дампов и карт ошибок. Обработка дампов сырого NAND требует формата и схемы конкретного контроллера, коррекции ошибок, реконструкции отображения физических страниц и, при наличии шифрования, соответствующих ключей.
 
 [DFRWS, Carving Contiguous and Fragmented Files with Object Validation](https://dfrws.org/presentation/carving-contiguous-and-fragmented-files-with-object-validation/) · [GNU ddrescue](https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html), [спецификация exFAT](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification), [ACE Lab PC‑3000 SSD](https://www.acelab.eu.com/pc3000SSD.php), [NIST SP 800‑88 Rev. 2](https://csrc.nist.gov/pubs/sp/800/88/r2/final).
+
+---
+
+## English
+
+**Photo Recovery** is a Windows desktop tool (Python, Tk) for recovering deleted photos from disk images (RAW/DD/IMG) and from backup/cache folders. It reads NTFS, FAT32 and exFAT structures (deleted MFT records and directory entries), carves JPEG/PNG/WebP by signature with decoding checks, extracts EXIF thumbnails and `thumbcache` entries, and has an optional mode that reassembles fragmented JPEG/PNG files and respects GNU ddrescue maps. Every recovered file is logged with its source offsets, method and SHA-256; duplicates are saved once.
+
+- Run on Windows 11: `start-windows.cmd` (Python 3.11+ with Tcl/Tk). Try it without personal data on `demo/demo.img`.
+- Tests: `python -m unittest discover -s tests -v` (run by CI on Linux and Windows).
+- Limits are listed honestly in the "Пределы версии 0.3" section: no progressive JPEG, HEIC/RAW, E01/VHDX, APFS/ext4, or disk imaging yet. Never recover onto the source drive.
+
+MIT licensed.
